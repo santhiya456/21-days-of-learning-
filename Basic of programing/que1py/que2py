@@ -1,0 +1,31 @@
+credit_score=int(input("Enter credit score:"))
+income=int(input("Enter income:"))
+emi=int(input("Enter emi:"))
+employment=input("Enter employment:") 
+
+status=""
+interest="N/A"
+
+# 1. credit score check
+if(credit_score<600):
+    status="Rejected"
+elif(600<=credit_score<=749):
+    status="Manual review"
+else:
+    # 2.income and EMI check
+    if(income<25000):
+        status="Rejected"
+        elif emi>(0.5*income):
+            status="Rejected"
+            else:
+                # 3.employment check
+                if(employment=="self-empolyed"):
+                    status="Approved"
+                    #Intrest rate
+                    if(credit_score>=800):
+                        interest="7%"
+                        else:
+                            interest="8%"
+                        else:
+                                status="Rejected"
+
